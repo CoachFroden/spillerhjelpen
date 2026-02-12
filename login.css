@@ -112,8 +112,8 @@ body {
   }
 }
 /* Overskrift med subtil glød */
-.glow-title {
-  font-size: 1.6rem;
+.card .glow-title {
+  font-size: 2.8rem;
   letter-spacing: 0.04em;
   margin-bottom: 12px;
 
@@ -135,7 +135,7 @@ body {
 .glow-wrapper::before {
   content: "";
   position: absolute;
-  inset: -28px;
+  inset: -8px;
 
   /* SAMME FORM SOM KORTET */
   border-radius: 20px;
@@ -147,7 +147,7 @@ body {
     rgba(42, 123, 229, 0.4)
   );
 
-  filter: blur(40px);
+  filter: blur(20px);
   opacity: 0.85;
 
   z-index: 0;
@@ -329,3 +329,52 @@ body {
 /* (Valgfritt) skjul scrollbar visuelt */
 .player-list::-webkit-scrollbar { width: 0; background: transparent; }
 .player-list { scrollbar-width: none; }
+/* ================================
+   Bakgrunnsbilde inne i kortet
+================================ */
+
+.glow-wrapper > .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(15, 23, 32, 0.85); /* fallback */
+}
+
+/* Selve bildet */
+.glow-wrapper > .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("image.png") center/cover no-repeat;
+
+  filter: blur(0px);
+  transform: scale(1.1); /* unngår blur-kant */
+
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Mørkt overlay for lesbarhet */
+.glow-wrapper > .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+ background: linear-gradient(
+  to bottom,
+  rgba(10, 15, 25, 0.55),
+  rgba(10, 15, 25, 0.75)
+);
+
+  z-index: 1;
+}
+
+/* Sørg for at innholdet ligger over */
+.glow-wrapper > .card > * {
+  position: relative;
+  z-index: 2;
+}
+.container {
+  padding-top: 160px;  /* juster tallet */
+}
