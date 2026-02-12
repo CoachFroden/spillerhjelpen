@@ -68,18 +68,25 @@
 <!-- Skjult select (brukes av JS/registrering) -->
 <select id="registerName" aria-hidden="true" tabindex="-1" class="native-select"></select>
 
-<!-- Custom dropdown -->
-<div class="player-picker" id="playerPicker">
-  <button type="button" class="player-toggle" id="playerToggle" aria-haspopup="listbox" aria-expanded="false">
-    <span id="playerLabel">Velg navnet ditt</span>
-    <span class="chev" aria-hidden="true">▾</span>
-  </button>
 
-  <ul class="player-list" id="playerList" role="listbox" aria-label="Velg spiller"></ul>
+<!-- Custom dropdown -->
+<div class="form-grid">
+
+  <div class="player-picker" id="playerPicker">
+    <button type="button" class="player-toggle" id="playerToggle" aria-haspopup="listbox" aria-expanded="false">
+      <span id="playerLabel">Velg navnet ditt</span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </button>
+
+    <ul class="player-list" id="playerList" role="listbox" aria-label="Velg spiller"></ul>
+  </div>
+
+  <input id="registerEmail" placeholder="Brukernavn" />
+  <input id="registerPassword" type="password" placeholder="Passord" />
+  <input id="registerPasswordConfirm" type="password" placeholder="Gjenta passord" />
+
 </div>
-      <input id="registerEmail" placeholder="Brukernavn" />
-      <input id="registerPassword" type="password" placeholder="Passord" />
-      <input id="registerPasswordConfirm" type="password" placeholder="Gjenta passord" />
+
 
       <p class="hint">
         Skriv samme passord to ganger for å være sikker.
