@@ -378,3 +378,24 @@ body {
 .container {
   padding-top: 160px;  /* juster tallet */
 }
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.45);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+.card input:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0,0,0,0.45) inset !important;
+  -webkit-text-fill-color: white !important;
+}
