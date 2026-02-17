@@ -302,3 +302,90 @@ button.danger {
 .back-btn:hover {
   background: rgba(255,255,255,0.16);
 }
+.back-btn {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  font-size: 14px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+.history-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.history-card h3 {
+  margin-bottom: 10px;
+  color: #facc15; /* gul */
+  font-size: 16px;
+}
+
+.history-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #e5e7eb;
+}
+
+.history-card strong {
+  color: #94a3b8;
+  font-weight: 500;
+}
+#historyList {
+  margin-top: 16px;
+}
+.history-card p + p {
+  margin-top: 6px;
+}
+#weeklyForm .btns {
+  margin-bottom: 24px;
+}
+.history-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.history-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.history-card.hide {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.reflection-type {
+  margin-bottom: 20px;
+}
+
+.reflection-type label {
+  font-weight: 500;
+}
+
+.reflection-type input[type="radio"] {
+  margin-right: 6px;
+}
+
+.reflection-type > label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}

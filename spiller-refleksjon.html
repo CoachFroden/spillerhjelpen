@@ -7,130 +7,12 @@
   <meta name="theme-color" content="#0f172a" />
 
   <link rel="stylesheet" href="./spiller-refleksjon.css" />
-  
-  <!-- PWA / App -->
-<link rel="manifest" href="./manifest.json">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Refleksjon">
-
-<link rel="apple-touch-icon" href="icon-180.png">
-
 </head>
 
 <body>
   <main class="container">
 
-    <div id="authBox" class="card" hidden>
-
-<h2 class="auth-title">Refleksjon</h2>
-
-<p class="auth-intro">
-  Dette er <strong>din personlige side</strong>.
-</p>
-
-<p class="auth-intro">
-  Her svarer du kort etter trening.
-</p>
-
-<p class="auth-intro muted">
-  Bare du og treneren kan se det du skriver.
-</p>
-
-
-
-      <!-- LOGIN -->
-      <div id="loginBox">
-        <input id="loginEmail" placeholder="Brukernavn" />
-        <input id="loginPassword" type="password" placeholder="Passord" />
-        <button id="loginBtn">Logg inn</button>
-		<p class="hint" style="margin-top:10px;">
-  Du trenger ikke e-post. Brukernavn får du av trener eller lager selv.
-</p>
-
-		<p class="hint" style="margin-top:10px;">
-  Glemt passord? Ta kontakt med trener.
-</p>
-
-
-        <p>
-          <button id="showRegisterBtn" class="secondary">
-  Har du ikke konto? Lag bruker
-</button>
-
-        </p>
-
-        <div class="status" id="loginStatus"></div>
-      </div>
-
-      <!-- REGISTRERING -->
-      <div id="registerBox" hidden>
-        <input id="registerName" placeholder="Navn" />
-        <input id="registerEmail" placeholder="Brukernavn" />
-        <input id="registerPassword" type="password" placeholder="Passord" />
-        <input id="registerPasswordConfirm" type="password" placeholder="Gjenta passord" />
-
-<p class="hint" style="margin-top:6px;">
-  Skriv samme passord to ganger for å være sikker.
-</p>
-
-
-        <button id="registerBtn">Opprett bruker</button>
-
-        <p>
-          <button id="showLoginBtn" class="secondary">
-  ← Tilbake
-</button>
-
-        </p>
-		
-		
-
-        <div class="status" id="registerStatus"></div>
-		
-      </div>
-	  <hr style="margin: 20px 0; opacity: 0.3;" />
-
-<p
-  id="showCoachLogin"
-  style="cursor:pointer; opacity:0.7; font-size:0.9em;"
->
-  Er du trener? Logg inn her
-</p>
-
-<div id="coachLoginBox" hidden>
-
-  <h3>Trener</h3>
-
-  <input
-    id="coachEmail"
-    type="email"
-    placeholder="E-post (trener)"
-    autocomplete="email"
-  />
-
-  <input
-    id="coachPassword"
-    type="password"
-    placeholder="Passord"
-    autocomplete="current-password"
-  />
-<p>
-  <button id="coachLoginBtn">
-    Logg inn som trener
-  </button>
-</p>
-  <p id="coachLoginStatus" class="status"></p>
-
-</div>
-
-    </div>
-	
-	
-
-    <div id="appBox">
-	
+    <div id="appBox" hidden>
       <header class="header">
         <h1>Refleksjon</h1>
         <p class="intro">Her kan du fylle ut hva du synest om ukas trening.</p>
@@ -146,11 +28,8 @@
   <div id="loggedInUser" class="logged-in-user" hidden>
     👤 <span id="loggedInUserName"></span>
   </div>
-
-  <button id="backBtn" class="back-btn">← Tilbake til Min side</button>
-
-
 </div>
+	<button class="back-btn" onclick="goBack()">← Tilbake</button>
   </div>
 
 
@@ -173,6 +52,20 @@
         <!-- UKEREFLEKSJON -->
         <div class="card">
           <h2>Ukerefleksjon</h2>
+		  
+		  <div class="reflection-type">
+  <label>Hva reflekterer du over?</label><br>
+
+  <label>
+    <input type="radio" name="reflectionType" value="training" checked>
+    Trening
+  </label>
+
+  <label style="margin-left: 15px;">
+    <input type="radio" name="reflectionType" value="match">
+    Kamp
+  </label>
+</div>
 
           <form id="weeklyForm">
             <label for="effort">1) Innsats denne uka</label>
@@ -201,10 +94,10 @@
               <option value="Nei">Nei</option>
             </select>
 
-            <label for="goodThing">Fornøyd med</label>
+            <label for="goodThing" id="goodThingLabel">Fornøyd med</label>
             <textarea id="goodThing"></textarea>
 
-            <label for="improveThing">Neste uke</label>
+            <label for="improveThing" id="improveThingLabel">Neste uke</label>
             <textarea id="improveThing"></textarea>
 
             <label for="coachNote">Til trener</label>
@@ -214,6 +107,13 @@
               <button type="submit">Send inn</button>
               <button id="resetWeeklyBtn" class="secondary" type="button">Tøm</button>
             </div>
+			
+			<section class="card">
+  <h2>Mine tidligere refleksjoner</h2>
+  <select id="weekSelector"></select>
+  <div id="historyList"></div>
+</section>
+
 
             <div class="status" id="weeklyStatus"></div>
           </form>
@@ -224,11 +124,5 @@
   </main>
 
 <script type="module" src="./spiller-refleksjon.js"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
-}
-</script>
-
 </body>
 </html>

@@ -1,9 +1,35 @@
 console.log("🔥 firebase-refleksjon.js LASTET");
 
 // firebase-refleksjon.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+
+import { getAuth } 
+from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+import { 
+  getFirestore, 
+  collection, 
+  doc, 
+  getDoc, 
+  getDocs, 
+  addDoc, 
+  setDoc, 
+  updateDoc, 
+  deleteDoc 
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+
+export {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  setDoc,
+  updateDoc,
+  deleteDoc
+};
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
