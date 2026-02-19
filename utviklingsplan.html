@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utviklingsplan</title>
+
+  <link rel="stylesheet" href="utviklingsplan.css">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f1720">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Utviklingsplan</h1>
+    <button id="backBtn" class="back-btn">← Tilbake</button>
+  </header>
+  
+  <section class="intro">
+  <p>
+    Du utvikler deg hele tiden.
+    Her er det vi fokuserer på nå for å ta deg videre.
+  </p>
+</section>
+
+
+<main class="container">
+
+<section class="card">
+  <h2>🎯 Utviklingsmål</h2>
+  <p class="section-help">
+    Dette er det viktigste du skal bli bedre på nå.
+  </p>
+  <div id="utviklingsmaalDisplay"></div>
+</section>
+
+<section class="card">
+  <h2>🏋️ Slik trener du på det</h2>
+  <p class="section-help">
+    Dette skal du jobbe ekstra med på trening.
+  </p>
+  <div id="trainingGoalDisplay"></div>
+</section>
+
+<section class="card">
+  <h2>⚽ Slik viser du det i kamp</h2>
+  <p class="section-help">
+    Dette skal vi kunne se når du spiller kamp.
+  </p>
+  <div id="matchBehaviourDisplay"></div>
+</section>
+
+  <section class="card">
+    <div id="updatedAtDisplay"></div>
+  </section>
+
+</main>
+
+
+  <script type="module" src="utviklingsplan.js"></script>
+
+</body>
+</html>

@@ -233,7 +233,8 @@ await addDoc(
     workedOnSeasonGoal,
     year,
     week,
-    type: selectedType
+    type: selectedType,
+    createdAt: serverTimestamp()
   }
 );
 
