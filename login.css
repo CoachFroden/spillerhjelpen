@@ -376,7 +376,7 @@ body {
   z-index: 2;
 }
 .container {
-  padding-top: 160px;  /* juster tallet */
+  padding-top: 40px;  /* juster tallet */
 }
 .card input {
   width: 100%;
