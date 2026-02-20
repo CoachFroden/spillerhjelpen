@@ -21,7 +21,7 @@ const db = firebase.firestore();
 
 auth.onAuthStateChanged(async (user) => {
   if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -80,6 +80,6 @@ window.goTo = function (page) {
 
 document.getElementById("logoutBtn").onclick = () => {
   auth.signOut().then(() => {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   });
 };
